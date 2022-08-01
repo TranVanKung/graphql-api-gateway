@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api_gateway:
+    container_name: api_gateway
+    restart: always
+    build: .
+    ports:
+      - 4000:4000
+    environment:
+      NODE_ENV: development
+      PORT: 4000
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
